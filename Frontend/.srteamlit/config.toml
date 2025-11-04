@@ -1,0 +1,37 @@
+# Configuration Streamlit pour Tourisme Burkina Faso PWA
+
+[theme]
+# Couleurs du drapeau burkinabè
+primaryColor = "#009E49"        # Vert
+backgroundColor = "#FFFFFF"      # Blanc
+secondaryBackgroundColor = "#F0F2F6"
+textColor = "#262730"
+font = "sans serif"
+
+[server]
+# Configuration du serveur
+port = 8501
+enableCORS = false
+enableXsrfProtection = true
+maxUploadSize = 200
+enableWebsocketCompression = true
+headless = false
+
+[browser]
+# Configuration du navigateur
+gatherUsageStats = false
+serverAddress = "localhost"
+serverPort = 8501
+
+[runner]
+# Configuration de l'exécution
+magicEnabled = true
+fastReruns = true
+
+[client]
+# Configuration client
+showErrorDetails = true
+toolbarMode = "minimal"
+
+[deprecation]
+showPyplotGlobalUse = false
