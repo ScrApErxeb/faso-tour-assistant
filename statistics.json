@@ -1,0 +1,15 @@
+{
+  "total_documents": 32,
+  "total_pages": 953,
+  "total_characters": 845150,
+  "total_words": 130799,
+  "types_distribution": {
+    "encyclopedie": 5,
+    "festival": 2,
+    "site_naturel": 2,
+    "patrimoine_unesco": 1,
+    "rapport_pdf": 22
+  },
+  "num_sources": 32,
+  "date_creation": "2025-11-02T16:10:26.782313"
+}
