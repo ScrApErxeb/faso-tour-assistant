@@ -309,22 +309,22 @@ st.markdown(f'<div class="greeting-banner">{greeting_message}</div>', unsafe_all
 # Bouton pour changer de langue
 col_lang1, col_lang2, col_lang3, col_lang4 = st.columns(4)
 with col_lang1:
-    if st.button("🗣️ Mooré", use_container_width=True):
+    if st.button("🗣️ Mooré"):
         st.session_state.current_language = "moore"
         st.session_state.greeting_index = random.randint(0, len(GREETINGS["moore"])-1)
         st.rerun()
 with col_lang2:
-    if st.button("🗣️ Dioula", use_container_width=True):
+    if st.button("🗣️ Dioula"):
         st.session_state.current_language = "dioula"
         st.session_state.greeting_index = random.randint(0, len(GREETINGS["dioula"])-1)
         st.rerun()
 with col_lang3:
-    if st.button("🗣️ Fulfuldé", use_container_width=True):
+    if st.button("🗣️ Fulfuldé"):
         st.session_state.current_language = "fulfulde"
         st.session_state.greeting_index = random.randint(0, len(GREETINGS["fulfulde"])-1)
         st.rerun()
 with col_lang4:
-    if st.button("🇫🇷 Français", use_container_width=True):
+    if st.button("🇫🇷 Français"):
         st.session_state.current_language = "francais"
         st.session_state.greeting_index = random.randint(0, len(GREETINGS["francais"])-1)
         st.rerun()
@@ -355,8 +355,7 @@ except:
 
 # Barre latérale
 with st.sidebar:
-    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/320px-Flag_of_Burkina_Faso.svg.png", 
-             use_container_width=True)
+    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/320px-Flag_of_Burkina_Faso.svg.png")
     
     st.markdown("### 🎯 Navigation Rapide")
     
@@ -439,12 +438,12 @@ with col_main1:
     
     col_btn1, col_btn2, col_btn3 = st.columns(3)
     with col_btn1:
-        search_button = st.button("🔍 RECHERCHER", type="primary", use_container_width=True)
+        search_button = st.button("🔍 RECHERCHER", type="primary")
     with col_btn2:
-        if st.button("🔄 Nouvelle question", use_container_width=True):
+        if st.button("🔄 Nouvelle question"):
             st.rerun()
     with col_btn3:
-        save_offline = st.button("💾 Mode Hors Ligne", use_container_width=True)
+        save_offline = st.button("💾 Mode Hors Ligne")
 
 with col_main2:
     st.markdown("### 📊 Stats")
@@ -894,14 +893,21 @@ with tab5:
         st.markdown(f"""
             <div class='site-card'>
                 <h3>{village['nom']}</h3>
-                <span class='region-badge badge-centre'>📍 {village['region']}</span>
         """, unsafe_allow_html=True)
+        
+        if 'region' in village:
+            st.markdown(f"<span class='region-badge badge-centre'>📍 {village['region']}</span>", unsafe_allow_html=True)
+        
+        st.markdown("</div>", unsafe_allow_html=True)
         
         if 'ethnie' in village:
             st.markdown(f"**👥 Ethnie :** {village['ethnie']}")
         
-        st.markdown(f"**✨ Spécialité :** {village['specialite']}")
-        st.markdown(f"\n{village['description']}")
+        if 'specialite' in village:
+            st.markdown(f"**✨ Spécialité :** {village['specialite']}")
+        
+        if 'description' in village:
+            st.markdown(f"\n{village['description']}")
         
         if 'a_voir' in village:
             st.markdown("\n**👀 À voir absolument :**")
@@ -921,7 +927,7 @@ with tab5:
         if 'ethique' in village:
             st.warning(f"⚠️ **Éthique :** {village['ethique']}")
         
-        st.markdown("</div>", unsafe_allow_html=True)
+        st.markdown("---")
 
 # Gastronomie
 st.markdown("---")
