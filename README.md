@@ -50,14 +50,15 @@ python -m venv .venv
 
 
 # Frontend dependencies (Streamlit)
+```
 pip install -r Frontend/requirements.txt
-
+```
 
 #### 4️⃣ Lancer l'Application
 
-
+```
 streamlit run Frontend/app.py
-
+```
 
 <div align="center">
 
