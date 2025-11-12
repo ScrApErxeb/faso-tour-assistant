@@ -28,14 +28,14 @@
 - **pip**
 ### Installation Étape par Étape
 
-#### 1️⃣ Cloner le Repository
+#### 1️ Cloner le Repository
 
 ```bash
 git clone https://github.com/ScrApErxeb/faso-tour-assistant.git
 cd faso-tour-assistant
 ```
 
-#### 2️⃣ Créer un Environnement Virtuel
+#### 2️ Créer un Environnement Virtuel
 
 **Sur Windows (PowerShell):**
 ```powershell
@@ -46,7 +46,7 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-#### 3️⃣ Installer les Dépendances
+#### 3️ Installer les Dépendances
 
 
 # Frontend dependencies (Streamlit)
@@ -54,7 +54,7 @@ python -m venv .venv
 pip install -r Frontend/requirements.txt
 ```
 
-#### 4️⃣ Lancer l'Application
+#### 4 Lancer l'Application
 
 ```
 streamlit run Frontend/app.py
